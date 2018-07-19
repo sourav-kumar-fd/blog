@@ -1075,3 +1075,28 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-19 18:12:49 +0530
 Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/todos/7" for 127.0.0.1 at 2018-07-19 21:27:07 +0530
+Connecting to database specified by database.yml
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTodo Load (0.3ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  Rendered todos/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50.0ms (Views: 30.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-19 21:27:07 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-19 21:27:07 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-19 21:27:07 +0530
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-19 21:27:07 +0530
+Served asset /application.js - 304 Not Modified (4ms)
