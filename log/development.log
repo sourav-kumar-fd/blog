@@ -1100,3 +1100,374 @@ Served asset /jquery.js - 304 Not Modified (2ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-19 21:27:07 +0530
 Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-20 00:08:43 +0530
+Connecting to database specified by database.yml
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16.8ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-20 00:08:43 +0530
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-20 00:08:43 +0530
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-20 00:08:43 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-20 00:08:43 +0530
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/todos/show" for 127.0.0.1 at 2018-07-20 00:09:00 +0530
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"show"}
+Completed 500 Internal Server Error in 14.6ms
+
+ActiveRecord::StatementInvalid (Could not find table 'todos'):
+  app/controllers/todos_controller.rb:16:in `show'
+
+
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.0ms)
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2018-07-20 00:09:23 +0530
+Processing by TodosController#new as HTML
+Completed 500 Internal Server Error in 0.6ms
+
+ActiveRecord::StatementInvalid (Could not find table 'todos'):
+  app/controllers/todos_controller.rb:4:in `new'
+  app/controllers/todos_controller.rb:4:in `new'
+
+
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.4ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateTodosTable (20180716115206)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "todos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20180716115206')[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2018-07-20 00:15:31 +0530
+Processing by TodosController#new as HTML
+  Rendered todos/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 24.9ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-20 00:15:31 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-20 00:15:31 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-20 00:15:31 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-20 00:15:31 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/todos" for 127.0.0.1 at 2018-07-20 00:15:50 +0530
+Processing by TodosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4agPlSO5C6/3vlPyVOx9OYdI9eDfLDUtvpAqhP8pV5o=", "todo"=>{"name"=>"hello ", "description"=>"hello description"}, "commit"=>"Create Todo"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "todos" ("description", "name") VALUES (?, ?)  [["description", "hello description"], ["name", "hello "]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/todos/1
+Completed 302 Found in 3.7ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/todos/1" for 127.0.0.1 at 2018-07-20 00:15:50 +0530
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered todos/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 8.9ms (Views: 7.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-20 00:15:50 +0530
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-20 00:15:50 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-20 00:15:50 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-20 00:15:50 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/todos/1/edit" for 127.0.0.1 at 2018-07-20 00:23:39 +0530
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered todos/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9.9ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-20 00:23:39 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-20 00:23:39 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-20 00:23:39 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-20 00:23:39 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/todos/1/edit" for 127.0.0.1 at 2018-07-20 00:32:29 +0530
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered todos/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 13.7ms (Views: 9.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-20 00:32:29 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-20 00:32:30 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-20 00:32:30 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-20 00:32:30 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/todos/1" for 127.0.0.1 at 2018-07-20 00:32:41 +0530
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4agPlSO5C6/3vlPyVOx9OYdI9eDfLDUtvpAqhP8pV5o=", "todo"=>{"name"=>"hello edited", "description"=>"hello description"}, "commit"=>"Update Todo", "id"=>"1"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 500 Internal Server Error in 5.9ms
+
+NoMethodError (private method `update' called for #<Todo id: 1, name: "hello ", description: "hello description">):
+  app/controllers/todos_controller.rb:25:in `update'
+
+
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.8ms)
+
+
+Started PUT "/todos/1" for 127.0.0.1 at 2018-07-20 00:34:11 +0530
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4agPlSO5C6/3vlPyVOx9OYdI9eDfLDUtvpAqhP8pV5o=", "todo"=>{"name"=>"hello edited", "description"=>"hello description"}, "commit"=>"Update Todo", "id"=>"1"}
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 500 Internal Server Error in 7.6ms
+
+NoMethodError (private method `update' called for #<Todo id: 1, name: "hello ", description: "hello description">):
+  app/controllers/todos_controller.rb:25:in `update'
+
+
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (39.9ms)
+
+
+Started PUT "/todos/1" for 127.0.0.1 at 2018-07-20 00:34:16 +0530
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4agPlSO5C6/3vlPyVOx9OYdI9eDfLDUtvpAqhP8pV5o=", "todo"=>{"name"=>"hello edited", "description"=>"hello description"}, "commit"=>"Update Todo", "id"=>"1"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 500 Internal Server Error in 5.4ms
+
+NoMethodError (private method `update' called for #<Todo id: 1, name: "hello ", description: "hello description">):
+  app/controllers/todos_controller.rb:25:in `update'
+
+
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (35.4ms)
+
+
+Started PUT "/todos/1" for 127.0.0.1 at 2018-07-20 00:36:31 +0530
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4agPlSO5C6/3vlPyVOx9OYdI9eDfLDUtvpAqhP8pV5o=", "todo"=>{"name"=>"hello edited", "description"=>"hello description"}, "commit"=>"Update Todo", "id"=>"1"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "todos" SET "name" = 'hello edited' WHERE "todos"."id" = 1
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/todos/1
+Completed 302 Found in 7.0ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/todos/1" for 127.0.0.1 at 2018-07-20 00:36:31 +0530
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered todos/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6.1ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-20 00:36:31 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-20 00:36:31 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-20 00:36:31 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-20 00:36:31 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/todos/1" for 127.0.0.1 at 2018-07-20 00:37:18 +0530
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered todos/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 9.5ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-20 00:37:18 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-20 00:37:18 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-20 00:37:18 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-20 00:37:18 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/todos/1" for 127.0.0.1 at 2018-07-20 00:37:21 +0530
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered todos/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6.0ms (Views: 5.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-20 00:37:21 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-20 00:37:21 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-20 00:37:21 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-20 00:37:21 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/todos/1" for 127.0.0.1 at 2018-07-20 00:37:25 +0530
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4agPlSO5C6/3vlPyVOx9OYdI9eDfLDUtvpAqhP8pV5o=", "todo"=>{"name"=>"hello edited", "description"=>"hello description"}, "commit"=>"Update Todo", "id"=>"1"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 500 Internal Server Error in 6.1ms
+
+NoMethodError (private method `update' called for #<Todo:0x007f98683b6a48>):
+  app/controllers/todos_controller.rb:25:in `update'
+
+
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (35.0ms)
+
+
+Started PUT "/todos/1" for 127.0.0.1 at 2018-07-20 00:38:14 +0530
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4agPlSO5C6/3vlPyVOx9OYdI9eDfLDUtvpAqhP8pV5o=", "todo"=>{"name"=>"hello edited", "description"=>"hello description"}, "commit"=>"Update Todo", "id"=>"1"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/todos/1
+Completed 302 Found in 4.4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/todos/1" for 127.0.0.1 at 2018-07-20 00:38:14 +0530
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered todos/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6.1ms (Views: 5.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-20 00:38:14 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-20 00:38:14 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-20 00:38:14 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-20 00:38:14 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/todos/1" for 127.0.0.1 at 2018-07-20 00:38:57 +0530
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4agPlSO5C6/3vlPyVOx9OYdI9eDfLDUtvpAqhP8pV5o=", "todo"=>{"name"=>"", "description"=>"hello description"}, "commit"=>"Update Todo", "id"=>"1"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered todos/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 9.7ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-07-20 00:38:58 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-07-20 00:38:58 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-07-20 00:38:58 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-07-20 00:38:58 +0530
+Served asset /application.js - 304 Not Modified (1ms)

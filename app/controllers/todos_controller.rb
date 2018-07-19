@@ -3,6 +3,9 @@ class TodosController < ApplicationController
   def new
   	@todo=Todo.new
   end 
+
+
+
   def create
   	@todo = Todo.new(params[:todo])
   	if @todo.save
@@ -12,6 +15,22 @@ class TodosController < ApplicationController
   	    render 'new'
   	end
   end
+
+  def edit
+   @todo = Todo.find(params[:id]) 
+  end
+
+  def update
+    @todo = Todo.find(params[:id])
+    if @todo.update_attributes(params[:todo])
+       flash[:notice]= "Todo was successfully updated"
+       redirect_to todo_path(@todo)
+    else
+      render 'edit'
+    end
+
+  end
+
   def show
   	 @todo=Todo.find(params[:id])
   end
