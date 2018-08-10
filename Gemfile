@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'test-unit', '~> 3.0'
-
+gem 'activerecord-postgresql-adapter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
