@@ -25,7 +25,7 @@
 
     if @todo.update_attributes(params[:todo])
        flash[:notice]= "Todo was successfully updated"
-       redirect_to todo_path(@todo)
+       redirect_to todos_path(@todo)
     else
       render 'edit'
     end
@@ -39,7 +39,7 @@
   def destroy
     @todo.destroy
     flash[:notice]= "todo deleted successfully"
-    redirect_to todos_path
+    redirect_to todo_path
   end
 
   def show

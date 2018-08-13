@@ -5826,3 +5826,41 @@ Completed 200 OK in 17.9ms (Views: 17.0ms | ActiveRecord: 0.1ms)
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:09:01 +0530
 Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started DELETE "/todos/15" for 127.0.0.1 at 2018-08-13 18:12:14 +0530
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z7OM2ysgStlUECcT2vX2v/cxoeABC4aXBLQZt7RWKGI=", "id"=>"15"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "15"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "todos" WHERE "todos"."id" = ?  [["id", 15]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3002/todos/15
+Completed 302 Found in 7.2ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/todos/15" for 127.0.0.1 at 2018-08-13 18:12:14 +0530
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "15"]]
+Completed 404 Not Found in 0.9ms
+
+ActiveRecord::RecordNotFound (Couldn't find Todo with id=15):
+  app/controllers/todos_controller.rb:51:in `set_todo'
+
+
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (44.6ms)
+
+
+Started GET "/todos.15" for 127.0.0.1 at 2018-08-13 18:12:24 +0530
+Processing by TodosController#index as 
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" [0m
+  Rendered todos/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 15.9ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:12:25 +0530
+Served asset /application.css - 304 Not Modified (0ms)
