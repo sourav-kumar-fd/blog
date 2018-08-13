@@ -6029,3 +6029,63 @@ Completed 200 OK in 15.0ms (Views: 14.3ms | ActiveRecord: 0.1ms)
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:17:29 +0530
 Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started DELETE "/todos/16" for 127.0.0.1 at 2018-08-13 18:22:03 +0530
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z7OM2ysgStlUECcT2vX2v/cxoeABC4aXBLQZt7RWKGI=", "id"=>"16"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "16"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "todos" WHERE "todos"."id" = ?  [["id", 16]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3002/todos
+Completed 302 Found in 6.3ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2018-08-13 18:22:03 +0530
+Processing by TodosController#index as HTML
+  [1m[35mTodo Load (0.2ms)[0m  SELECT "todos".* FROM "todos" 
+  Rendered todos/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 10.7ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:22:03 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/todos/17/edit" for 127.0.0.1 at 2018-08-13 18:22:38 +0530
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "17"]]
+  Rendered todos/_form.html.erb (2.7ms)
+  Rendered todos/edit.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15.4ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:22:38 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started PUT "/todos/17" for 127.0.0.1 at 2018-08-13 18:22:42 +0530
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z7OM2ysgStlUECcT2vX2v/cxoeABC4aXBLQZt7RWKGI=", "todo"=>{"name"=>"hgerj ", "description"=>"kvhdfjj fefs"}, "commit"=>"Update Todo", "id"=>"17"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "17"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "todos" SET "description" = 'kvhdfjj fefs' WHERE "todos"."id" = 17
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3002/todos.17
+Completed 302 Found in 4.3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos.17" for 127.0.0.1 at 2018-08-13 18:22:42 +0530
+Processing by TodosController#index as 
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" 
+  Rendered todos/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 15.3ms (Views: 14.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:22:42 +0530
+Served asset /application.css - 304 Not Modified (0ms)

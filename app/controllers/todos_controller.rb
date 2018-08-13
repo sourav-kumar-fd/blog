@@ -1,6 +1,6 @@
  class TodosController < ApplicationController
 
-  before_filter :set_todo, only: [:edit, :update, :show, :destroy]
+  #before_filter :set_todo, only: [:edit, :update, :show, :destroy]
   def new
   	@todo=Todo.new
   end
@@ -18,9 +18,11 @@
   end
 
   def edit
+    @todo = Todo.find(params[:id])
   end
 
   def update
+    @todo = Todo.find(params[:id])
     if @todo.update_attributes(params[:todo])
        flash[:notice]= "Todo was successfully updated"
        redirect_to todos_path(@todo)
@@ -35,15 +37,14 @@
   end
 
   def destroy
-    @todo.destroy
+    todo = Todo.find(params[:id])
+    todo.destroy
     flash[:notice]= "todo deleted successfully"
     redirect_to todos_path
   end
 
   def show
+    @todo = Todo.find(params[:id])
   end
-     def set_todo
-      @todo = Todo.find(params[:id])
-     end
 
 end
