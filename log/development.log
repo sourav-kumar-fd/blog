@@ -6089,3 +6089,276 @@ Completed 200 OK in 15.3ms (Views: 14.4ms | ActiveRecord: 0.1ms)
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:22:42 +0530
 Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2018-08-13 18:25:37 +0530
+Processing by TodosController#new as HTML
+  Rendered todos/_form.html.erb (5.4ms)
+  Rendered todos/new.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 13.9ms
+
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @todo.errors.any? %>
+    2:     <h2>The following errors prevented the todo from being saved</h2>
+    3:         <ul>
+    4:             <% @todo.errors.full_messages.each do |msg| %>
+  app/views/todos/_form.html.erb:1:in `_app_views_todos__form_html_erb__314672081349093341_70351532432140'
+  app/views/todos/new.html.erb:3:in `_app_views_todos_new_html_erb___1191808499549122192_70351523285620'
+
+
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (43.3ms)
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2018-08-13 18:25:54 +0530
+Processing by TodosController#new as HTML
+  Rendered todos/_form.html.erb (1.8ms)
+  Rendered todos/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14.6ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:25:55 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/todos" for 127.0.0.1 at 2018-08-13 18:26:00 +0530
+Processing by TodosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z7OM2ysgStlUECcT2vX2v/cxoeABC4aXBLQZt7RWKGI=", "todo"=>{"name"=>"hgjd", "description"=>"hfjehjf bfjhsusedf"}, "commit"=>"Create Todo"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "todos" ("description", "name") VALUES (?, ?)  [["description", "hfjehjf bfjhsusedf"], ["name", "hgjd"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3002/todos.18
+Completed 302 Found in 3.8ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/todos.18" for 127.0.0.1 at 2018-08-13 18:26:00 +0530
+Processing by TodosController#index as 
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" 
+  Rendered todos/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 17.5ms (Views: 16.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:26:00 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/todos/17/edit" for 127.0.0.1 at 2018-08-13 18:26:13 +0530
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "17"]]
+  Rendered todos/_form.html.erb (1.9ms)
+  Rendered todos/edit.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 9.4ms
+
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @todo.errors.any? %>
+    2:     <h2>The following errors prevented the todo from being saved</h2>
+    3:         <ul>
+    4:             <% @todo.errors.full_messages.each do |msg| %>
+  app/views/todos/_form.html.erb:1:in `_app_views_todos__form_html_erb__314672081349093341_70351532432140'
+  app/views/todos/edit.html.erb:4:in `_app_views_todos_edit_html_erb___628739376923445160_70351532266940'
+
+
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/souravk/.rvm/gems/ruby-2.3.4/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (39.4ms)
+
+
+Started GET "/todos/17/edit" for 127.0.0.1 at 2018-08-13 18:26:35 +0530
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "17"]]
+  Rendered todos/_form.html.erb (1.9ms)
+  Rendered todos/edit.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 12.0ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:26:35 +0530
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-08-13 18:26:35 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-08-13 18:26:35 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-08-13 18:26:35 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/todos/17" for 127.0.0.1 at 2018-08-13 18:26:39 +0530
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z7OM2ysgStlUECcT2vX2v/cxoeABC4aXBLQZt7RWKGI=", "todo"=>{"name"=>"hgerj ", "description"=>"kvhdfjj fefs dwew"}, "commit"=>"Update Todo", "id"=>"17"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "17"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "todos" SET "description" = 'kvhdfjj fefs dwew' WHERE "todos"."id" = 17[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3002/todos.17
+Completed 302 Found in 3.2ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos.17" for 127.0.0.1 at 2018-08-13 18:26:39 +0530
+Processing by TodosController#index as 
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" [0m
+  Rendered todos/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16.2ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:26:39 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-08-13 18:26:39 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-08-13 18:26:39 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-08-13 18:26:39 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/todos/17" for 127.0.0.1 at 2018-08-13 18:40:05 +0530
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "17"]]
+  Rendered todos/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 7.0ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:40:05 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:05 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:05 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:05 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/todos/17/edit" for 127.0.0.1 at 2018-08-13 18:40:08 +0530
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "17"]]
+  Rendered todos/_form.html.erb (1.6ms)
+  Rendered todos/edit.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 9.0ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:40:08 +0530
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:08 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:08 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:08 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/todos/17/edit" for 127.0.0.1 at 2018-08-13 18:40:38 +0530
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1  [["id", "17"]]
+  Rendered todos/_form.html.erb (2.0ms)
+  Rendered todos/edit.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 13.5ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:40:38 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:38 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:38 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:38 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/todos/17" for 127.0.0.1 at 2018-08-13 18:40:44 +0530
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z7OM2ysgStlUECcT2vX2v/cxoeABC4aXBLQZt7RWKGI=", "todo"=>{"name"=>"hgerj ", "description"=>"kvhdfjj fefs dwew dcsd"}, "commit"=>"Update Todo", "id"=>"17"}
+  [1m[36mTodo Load (0.1ms)[0m  [1mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT 1[0m  [["id", "17"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "todos" SET "description" = 'kvhdfjj fefs dwew dcsd' WHERE "todos"."id" = 17[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3002/todos.17
+Completed 302 Found in 3.5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/todos.17" for 127.0.0.1 at 2018-08-13 18:40:44 +0530
+Processing by TodosController#index as 
+  [1m[36mTodo Load (0.2ms)[0m  [1mSELECT "todos".* FROM "todos" [0m
+  Rendered todos/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18.1ms (Views: 17.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:40:44 +0530
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:44 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:44 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:44 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/todos.18" for 127.0.0.1 at 2018-08-13 18:40:46 +0530
+Processing by TodosController#index as 
+  [1m[35mTodo Load (0.1ms)[0m  SELECT "todos".* FROM "todos" 
+  Rendered todos/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18.4ms (Views: 17.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2018-08-13 18:40:46 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:46 +0530
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:46 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2018-08-13 18:40:46 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
