@@ -11,7 +11,7 @@
   	@todo = Todo.new(params[:todo])
   	if @todo.save
   		flash[:notice] = "Todo was created successfully"
-  	    redirect_to todos_path(@todo)
+  	    redirect_to todo_path(@todo)
     else
   	    render 'new'
   	end
