@@ -1,9 +1,9 @@
  class TodosController < ApplicationController
 
-  before_filter :set_todo, only: [:edit, :update, :show, :destroy] 
+  before_filter :set_todo, only: [:edit, :update, :show, :destroy]
   def new
   	@todo=Todo.new
-  end 
+  end
 
 
 
@@ -11,18 +11,18 @@
   	@todo = Todo.new(params[:todo])
   	if @todo.save
   		flash[:notice] = "Todo was created successfully"
-  	    redirect_to todo_path(@todo)
+  	    redirect_to todos_path(@todo)
     else
   	    render 'new'
   	end
   end
 
   def edit
-    
+
   end
 
   def update
-    
+
     if @todo.update_attributes(params[:todo])
        flash[:notice]= "Todo was successfully updated"
        redirect_to todo_path(@todo)
@@ -43,7 +43,7 @@
   end
 
   def show
-  	 
+
   end
 
   private
