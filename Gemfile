@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'test-unit', '~> 3.0'
-gem 'activerecord-postgresql-adapter'
+#gem 'activerecord-postgresql-adapter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,7 +38,9 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.11.0'
+  gem 'activerecord-postgresql-adapter'
+
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
