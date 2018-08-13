@@ -37,7 +37,7 @@
   def destroy
     @todo.destroy
     flash[:notice]= "todo deleted successfully"
-    redirect_to todo_path
+    redirect_to todos_path
   end
 
   def show

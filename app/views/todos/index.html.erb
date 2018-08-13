@@ -9,7 +9,7 @@
     <tr>
     	<td><%= todo.name %></td>
     	<td><%= todo.description %></td>
-    	<td><%= link_to "Edit", edit_todo_path(todo) %></td>
+    	<td><%= link_to "Edit", edit_todos_path(todo) %></td>
     	<td><%= link_to "show", todos_path(todo) %></td>
     	<td><%= link_to "Delete", todo_path(todo), method: :delete, data: {confirm: "are you sure?"} %></td>
   </tr>
