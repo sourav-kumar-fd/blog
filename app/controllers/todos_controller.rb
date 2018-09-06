@@ -4,7 +4,8 @@
   def new
   	@todo=Todo.new
   end
-
+  def just_for_test
+  end
 
 
   def create
